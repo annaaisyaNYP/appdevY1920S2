@@ -1,26 +1,45 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #AC895F;">
+  <!-- Brand & Responsiveness-->
   <a class="navbar-brand" href="#">Dorcks</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link 1</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link 2</a>
-    </li>
+  <!-- Items -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
 
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        User Management
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">
+      Products
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link a</a>
-        <a class="dropdown-item" href="#">Link b</a>
+        <a class="dropdown-header" href="#">Pokemon</a>
+        <a class="dropdown-item" href="#">Trading Cards</a>
+        <a class="dropdown-item" href="#">Plushies</a>
+        <a class="dropdown-item" href="#">Clothes and more</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-header" href="#">Minecraft</a>
+        <a class="dropdown-item" href="#">Toys</a>
+        <a class="dropdown-item" href="#">Clothes</a>
+        <a class="dropdown-item" href="#">Accessories</a>
       </div>
-    </li>
-  </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">About Us</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Contact Us | FAQ</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <button class="btn btn-outline-light my-2 my-sm-0" style="margin-left: 30px;">Register/Login</button>
+  </div>
 </nav>
 
