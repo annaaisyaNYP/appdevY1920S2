@@ -14,6 +14,10 @@ def createUser():
     return redirect(url_for('home'))
  return render_template('createUser.html', form=createUserForm)
 
+@app.route('/contactUsFAQ')
+def FAQ():
+    return render_template('contactUsFAQ.html')
+
 if __name__ == '__main__' :
     app.run()
 
