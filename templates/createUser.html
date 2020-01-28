@@ -11,7 +11,7 @@
      {{ render_field(form.lastName, class="form-control") }}
      </div>
      <div class="form-group">
-     {{ render_field(form.membership, class="form-check") }}
+     {{ render_field(form.email, class="form-control") }}
      </div>
      <div class="form-group">
      {{ render_field(form.gender, class="form-control") }}
@@ -21,7 +21,7 @@
      {{ render_field(form.remarks, class="form-control") }}
      </div>
      </div>
-     <input type="submit" value="Submit" class="btn btn-primary"/>
+     <input type="submit" value="Submit" class="btn btn-outline-primary" onclick="return confirm('Account successfully registered!');"/>
+     <a href="/retrieveUsers"><button type="button" class="btn btn-link">Staff Link</button></a>
 </form>
-<a href="/retrieveUsers"><button type="button" class="btn btn-link">Staff Link</button></a>
 {% endblock %}

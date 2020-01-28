@@ -25,12 +25,12 @@ def createUser():
             print("Error in retrieving Users from storage.db.")
 
         user = User.User(createUserForm.firstName.data, createUserForm.lastName.data, createUserForm.gender.data,
-                         createUserForm.membership.data, createUserForm.remarks.data)
+                         createUserForm.email.data, createUserForm.remarks.data)
         usersDict[user.get_userID()] = user
         db['Users'] = usersDict
         db.close()
 
-        return redirect(url_for('retrieveUsers'))
+        return redirect(url_for('home'))
     return render_template('createUser.html', form=createUserForm)
 
 @app.route('/retrieveUsers')
@@ -57,7 +57,7 @@ def updateUser(id):
         user = userDict.get(id)
         user.set_firstName(updateUserForm.firstName.data)
         user.set_lastName(updateUserForm.lastName.data)
-        user.set_membership(updateUserForm.membership.data)
+        user.set_email(updateUserForm.email.data)
         user.set_gender(updateUserForm.gender.data)
         user.set_remarks(updateUserForm.remarks.data)
 
@@ -74,7 +74,7 @@ def updateUser(id):
         user = userDict.get(id)
         updateUserForm.firstName.data = user.get_firstName()
         updateUserForm.lastName.data = user.get_lastName()
-        updateUserForm.membership.data = user.get_membership()
+        updateUserForm.email.data = user.get_email()
         updateUserForm.gender.data = user.get_gender()
         updateUserForm.remarks.data = user.get_remarks()
 
@@ -97,6 +97,15 @@ def deleteUser(id):
 @app.route('/contactUsFAQ')
 def FAQ():
     return render_template('contactUsFAQ.html')
+
+# Temporary Code
+@app.route('/login')
+def login() :
+    return render_template('login.html')
+
+@app.route('/staff')
+def staff() :
+    return render_template('staffDash.html')
 
 if __name__ == '__main__' :
     app.run()
