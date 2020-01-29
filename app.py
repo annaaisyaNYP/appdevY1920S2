@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
+from flask_moment import Moment
 from forms import CreateUserForm
 import shelve, User, pathlib
 
 app = Flask(__name__)
+moment = Moment(app)
 
 @app.route('/')
 def home():
@@ -98,7 +100,6 @@ def deleteUser(id):
 def FAQ():
     return render_template('contactUsFAQ.html')
 
-# Temporary Code
 @app.route('/login')
 def login() :
     return render_template('login.html')
@@ -106,6 +107,10 @@ def login() :
 @app.route('/staff')
 def staff() :
     return render_template('staffDash.html')
+
+@app.route('/test')
+def test() :
+    return render_template('proof.html')
 
 if __name__ == '__main__' :
     app.run()

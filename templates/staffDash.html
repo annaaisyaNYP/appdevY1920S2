@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block title %} Dorck - Video Game Merchandise Store| Dashboard {% endblock %}
 {% block content %}
-<h1 class="display-4">Welcome</h1>
+<h1 class="display-4">Staff Dashboard</h1>
+<p>Today is {{ moment().format("dddd, MMMM Do YYYY, h:mm:ss a") }}.</p>
 <p>We have - orders to fulfil</p>
-<a href="/retrieveUsers">User Management</a>
-<a>Product Management</a>
-<a>Order Managment</a>
+
+<a href="/retrieveUsers"><button type="button" class="btn btn-outline-secondary">Users</button></a>
+<a href=""><button type="button" class="btn btn-outline-secondary">Products</button></a>
+<a href=""><button type="button" class="btn btn-outline-secondary">Orders</button></a>
+
+<!-- Implement dynamic tabs like practical 2? //Aisya -->
 {% endblock %}
