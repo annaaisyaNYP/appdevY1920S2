@@ -31,7 +31,6 @@ def createUser():
         usersDict[user.get_userID()] = user
         db['Users'] = usersDict
         db.close()
-
         return redirect(url_for('home'))
     return render_template('createUser.html', form=createUserForm)
 
