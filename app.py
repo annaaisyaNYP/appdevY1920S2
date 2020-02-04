@@ -65,7 +65,7 @@ def updateUser(id):
         db['Users'] = userDict
         db.close()
 
-        return redirect(url_for('retrieveUsers'))
+        return redirect(url_for('test'))
     else:
         userDict = {}
         db = shelve.open('storage.db', 'r')
@@ -108,8 +108,17 @@ def staff() :
     return render_template('staffDash.html')
 
 @app.route('/test')
-def test() :
-    return render_template('proof.html')
+def test():
+    usersDict = {}
+    db = shelve.open('storage.db', 'r')
+    usersDict = db['Users']
+    db.close()
+
+    usersList = []
+    for key in usersDict:
+        user = usersDict.get(key)
+        usersList.append(user)
+    return render_template('proof.html',usersList=usersList, count=len(usersList))
 
 if __name__ == '__main__' :
     app.run()

@@ -9,12 +9,12 @@ This is a proof of concept
 <br>
 <h1 class="display-4" align="center">Staff Dashboard</h1>
 <p align="center">{{ moment().format("dddd, MMMM Do YYYY, h:mm:ss a") }}.</p>
-
+<br>
 
 <!-- Nav tabs -->
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs nav-fill">
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="pill" href="#User">User</a>
+    <a class="nav-link active" data-toggle="pill" href="#Users">Users</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" data-toggle="pill" href="#Products">Products</a>
@@ -22,11 +22,17 @@ This is a proof of concept
   <li class="nav-item">
     <a class="nav-link" data-toggle="pill" href="#Orders">Orders</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#Deliveries">Deliveries</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#Responses">Responses</a>
+  </li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div class="tab-pane container active" id="User">
+  <div class="tab-pane container active" id="Users">
       <br>
       <h1 class="display-4">Manage Users</h1>
       <div>
@@ -81,6 +87,14 @@ This is a proof of concept
   <div class="tab-pane container fade" id="Orders">
       <br>
       <h1 class="display-4">Manage Orders</h1>
+  </div>
+  <div class="tab-pane container fade" id="Deliveries">
+      <br>
+      <h1 class="display-4">Manage Deliveries</h1>
+  </div>
+  <div class="tab-pane container fade" id="Responses">
+      <br>
+      <h1 class="display-4">Manage Responses</h1>
   </div>
 </div>
 

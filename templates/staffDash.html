@@ -3,7 +3,7 @@
 {% block content %}
 <h1 class="display-4">Staff Dashboard</h1>
 <p>Today is {{ moment().format("dddd, MMMM Do YYYY, h:mm:ss a") }}.</p>
-<p>We have - orders to fulfil</p>
+<br>
 
 <a href="/retrieveUsers"><button type="button" class="btn btn-outline-secondary">Users</button></a>
 <a href=""><button type="button" class="btn btn-outline-secondary">Products</button></a>
@@ -11,5 +11,4 @@
 <a href=""><button type="button" class="btn btn-outline-secondary">Delivery</button></a>
 <a href=""><button type="button" class="btn btn-outline-secondary">FAQ</button></a>
 
-<!-- Implement dynamic tabs like practical 2? //Aisya -->
 {% endblock %}
