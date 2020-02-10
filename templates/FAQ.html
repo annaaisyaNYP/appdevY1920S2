@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% block title %}Dorcks | FAQ{% endblock %}
+{% block content %}
+    <div class="jumbotron" style="margin-top: 32px;">
+    <h1 class="display-4">FAQs</h1>
+    <p class="lead">Frequently Asked Questions</p>
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Categories
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#payments">Payments</a>
+        <a class="dropdown-item" href="#orders">Orders</a>
+        <a class="dropdown-item" href="#deliveries">Deliveries</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron" id="payments">
+    <h1 class="display-4">Payments</h1><br>
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              What are the payment methods available for products?
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            You can purchase items using Visa and MasterCard.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Where can I go to track my orders and payment?
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            Your orders and payments are visible in the order history.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              How do I know whether my order has been successfully placed?
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            You will be sent a confirmation email upon successful placement of order.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="jumbotron" id="orders">
+    <h1 class="display-4">Orders</h1><br>
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              How can i get a refund for my cancelled order?
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseFour" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+              <ul><li><b>Credit/Debit card payments: </b> refund will take between 7- 14 working days</li>
+                  <li><b>Bank transfer payments: </b> refunded to shopee wallet within 24 hours</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Is there a limit to the number of vouchers used in a single checkout?
+            </button>
+          </h2>
+        </div>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            Only <b>one</b> voucher is allowed in a single checkout
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+               Can I cancel my order?
+            </button>
+          </h2>
+        </div>
+        <div id="collapseSix" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            You may cancel your order by tapping on <b>Cancel Order</b> in Order Detail page
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="jumbotron" id="deliveries">
+    <h1 class="display-4">Deliveries</h1><br>
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+              Approximately how much would the delivery cost?
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseSeven" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+              <ul><li><b>For local/domestic shipping:</b> $3 - $7</li>
+                  <li><b>For overseas shipping:</b> $6 - $13</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+              What is the maximum accepted weight for delivery?
+            </button>
+          </h2>
+        </div>
+        <div id="collapseEight" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+              <ul><li><b>Dimensions of parcel: </b> should not exceed 300cm</li>
+                  <li><b>Maximum weight:</b> 30kg per package</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+              What is the time taken for delivery?
+            </button>
+          </h2>
+        </div>
+        <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+              <ul><li><b>For local/domestic shipping: </b> within 1-3 days </li>
+                  <li><b>For overseas shipping:</b> within 9-24 days </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+              Options for logistics provider of delivery
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTen" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+              <ul><li><b>Singpost - Registered Mail</b></li>
+                  <li><b>Singpost - smartpac</b></li>
+                  <li><b>Ta-Q-bin</b></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock%}

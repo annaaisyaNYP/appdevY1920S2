@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Dorcks | Forum {% endblock %}
+{% block content %}
+<h1 class="display-4">Retrieve Messages</h1>
+<div>
+    {% if count == 0 %}
+    <p>There are no messages.</p>
+    {% elif count == 1 %}
+    <p>There is 1 message.</p>
+    {% else %}
+    <p>There are {{ count }} messages.</p>
+    {% endif %}
+</div>
+
+<div>
+     <table class="table table-striped">
+         <thead>
+             <tr>
+                 <th>Message ID</th>
+                 <th>Name</th>
+                 <th>Email</th>
+                 <th>Subject</th>
+                 <th>Message</th>
+                 <th></th>
+                 <th></th>
+             </tr>
+         </thead>
+         <tbody>
+         {% for message in messagesList %}
+             <tr>
+                 <td>{{ message.get_messageID() }}</td>
+                 <td>{{ message.get_name() }}</td>
+                 <td>{{ message.get_email() }}</td>
+                 <td>{{ message.get_subject() }}</td>
+                 <td>{{ message.get_message() }}</td>
+                 <td><a href="/updateMessage/{{message.get_messageID()}}" class="btn btn-warning">Update</a></td>
+                 <td><a href="/deleteMessage/{{message.get_messageID()}}" class="btn btn-danger">Delete</a></td>
+            </tr>
+         {% endfor %}
+         </tbody>
+     </table>
+</div>
+{% endblock %}

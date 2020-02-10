@@ -1,44 +1,24 @@
 {% extends "base.html" %}
 {% block title %}Dorcks | Check Account{% endblock %}
-
 {% block content %}
+{% from "includes/_formhelper.html" import render_field %}
 <div class="card">
 <article class="card-body">
 <a href="/createUser" class="float-right btn btn-outline-primary">Register</a>
 <h4 class="card-title mb-4 mt-1">Sign in</h4>
 <form>
-
     <div class="form-group">
-        <label>Your email</label>
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-             </div>
-            <input name="" class="form-control" placeholder="example@email.com" type="email">
-        </div>
+            {{ render_field(form.email, class="form-control", placeholder="email@example.com") }}
 	</div>
 
 	<div class="form-group">
-        <a class="float-right" href="#">Forgot?</a>
-    	<label>Your password</label>
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-             </div>
-            <input class="form-control" placeholder="******" type="password">
-        </div>
+        <a class="float-right" onclick="return confirm('Please contact us your details at customersupport@dorcks.sg')">Forgot?</a>
+            {{ render_field(form.password, class="form-control", placeholder="********") }}
 	</div>
 
     <div class="form-group">
-        <div class="checkbox">
-          <label> <input type="checkbox"> Save password </label>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <button type="submit" class="btn btn-outline-primary"> Login  </button>
+        <input type="submit" value="Login" class="btn btn-outline-primary" formmethod="post"/>
         <a href="/staff"><button type="button" class="btn btn-link">Staff Link</button></a>
-        <a href="/test" style="font-size: 8px;">test</a>
     </div>
 </form>
 </article>
