@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Dorcks | Edit FAQ{% endblock %}
+{% block content %}
+<h1 class="display-4">Edit FAQ</h1>
+<div>
+     {% if count == 0 %}    <p>There are no questions.</p>
+     {% elif count == 1 %}  <p>There is 1 question.</p>
+     {% else %}             <p>There are {{ count }} questions.</p>
+     {% endif %}
+</div>
+
+<div>
+     <table class="table table-striped">
+         <thead>
+             <tr><th>Faq ID</th><th>Category</th><th>Question</th><th>Answer</th></tr>
+         </thead>
+         <tbody>
+         {% for faq in faqsList %}
+             <tr>
+                 <td>{{ faq.get_faqID() }}</td>
+                 <td>{{ faq.get_category() }}</td>
+                 <td>{{ faq.get_question() }}</td>
+                 <td>{{ faq.get_answer() }}</td>
+                 <td><a href="/updateFaq/{{faq.get_faqID()}}" class="btn btn-warning">Update</a></td>
+                 <td>
+                      <form action="{{url_for('deleteFaq', id = faq.get_faqID())}}" method="POST">
+                            <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this question?');">
+                      </form>
+                 </td>
+            </tr>
+         {% endfor %}
+         </tbody>
+     </table>
+</div>
+{% endblock %}

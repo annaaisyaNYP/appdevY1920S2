@@ -19,6 +19,16 @@
     <div class="form-group">
         <input type="submit" value="Login" class="btn btn-outline-primary" formmethod="post"/>
         <a href="/staff"><button type="button" class="btn btn-link">Staff Link</button></a>
+        <a href="/logout"><button type="button" class="btn btn-link">Log out</button></a>
+        {% if status == False %}
+            {% block commentA %}
+                {% include 'U-logincomment.html' %}
+            {% endblock %}
+        {% else %}
+            {% block commentB %}
+                {% include 'U-logincomment0.html' %}
+            {% endblock %}
+        {% endif %}
     </div>
 </form>
 </article>

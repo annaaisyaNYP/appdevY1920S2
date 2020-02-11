@@ -91,12 +91,99 @@ This is a proof of concept
   <div class="tab-pane container fade" id="Deliveries">
       <br>
       <h1 class="display-4">Manage Deliveries</h1>
+          <div>
+             {% if countC == 0 %}
+             <p>There are no report.</p>
+             {% elif countC == 1 %}
+             <p>There is 1 report.</p>
+             {% else %}
+             <p>There are {{ countC }} report.</p>
+             {% endif %}
+          </div>
+          <div>
+              <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>Report Count</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Delivery ID</th>
+                      <th>Method</th>
+                      <th>Remarks</th>
+                      <th></th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+              {% for report in reportsList %}
+                  <tr>
+                      <td>{{ report.get_reportID() }}</td>
+                      <td>{{ report.get_firstName() }}</td>
+                      <td>{{ report.get_lastName() }}</td>
+                      <td>{{ report.get_deliveryID() }}</td>
+                      {% if report.get_method() == "T" %}
+                      <td>Truck</td>
+                      {% elif report.get_method() == "P" %}
+                      <td>Postage</td>
+                      {% endif %}
+                      <td>{{ report.get_remarks() }}</td>
+                      <td><a href="/updateReport/{{report.get_reportID()}}" class="btn btn-warning">Update</a></td>
+                      <td>
+                          <form action="{{url_for('deleteReport', id=report.get_reportID())}}" method="POST">
+                              <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this report?');">
+                          </form>
+                      </td>
+                  </tr>
+              {% endfor %}
+              </tbody>
+          </table>
+      </div>
   </div>
   <div class="tab-pane container fade" id="Responses">
       <br>
       <h1 class="display-4">Manage Responses</h1>
-      <a href="/retrieveMessages"><button type="button" class="btn btn-link">test</button></a>
+      <div class="btn-group" role="group" aria-label="Basic example" style="margin: 10px 0;">
+          <button type="button" class="btn btn-secondary"><a href="/createFaq" style="text-decoration: none; color: white;">Create FAQ</a></button>
+          <button type="button" class="btn btn-secondary"><a href="/retrieveFaqs" style="text-decoration: none; color: white;">Edit FAQ</a></button>
+      </div>
+      <div>
+        {% if countA == 0 %}
+        <p>There are no messages.</p>
+        {% elif countA == 1 %}
+        <p>There is 1 message.</p>
+        {% else %}
+        <p>There are {{ countA }} messages.</p>
+        {% endif %}
+      </div>
+
+      <div>
+           <table class="table table-striped">
+               <thead>
+                   <tr>
+                       <th>Message ID</th>
+                       <th>Name</th>
+                       <th>Email</th>
+                       <th>Subject</th>
+                       <th>Message</th>
+                       <th></th>
+                       <th></th>
+                   </tr>
+               </thead>
+               <tbody>
+               {% for message in messagesList %}
+                   <tr>
+                       <td>{{ message.get_messageID() }}</td>
+                       <td>{{ message.get_name() }}</td>
+                       <td>{{ message.get_email() }}</td>
+                       <td>{{ message.get_subject() }}</td>
+                       <td>{{ message.get_message() }}</td>
+                       <td><a href="/updateMessage/{{message.get_messageID()}}" class="btn btn-warning">Update</a></td>
+                       <td><a href="/deleteMessage/{{message.get_messageID()}}" class="btn btn-danger">Delete</a></td>
+                   </tr>
+               {% endfor %}
+               </tbody>
+           </table>
+      </div>
   </div>
 </div>
-
 {% endblock %}

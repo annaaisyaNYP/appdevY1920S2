@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Dorcks |Create FAQ{% endblock %}
+{% block content %}
+{% from "includes/_formhelper.html" import render_field %}
+<h1 class="display-4">FAQ</h1>
+
+<form method="POST" action="">
+ <div class="form-group"> {{ render_field(form.category, class="form-control") }} </div>
+ <div class="form-group"> {{ render_field(form.question, class="form-control") }} </div>
+ <div id="prof">
+   <div class="form-group"> {{ render_field(form.answer, class="form-control") }} </div>
+ </div>
+ <input type="submit" value="Submit" class="btn btn-primary"/>
+</form>
+
+{% endblock %}

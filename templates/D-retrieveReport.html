@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Dorck Delivery - Retrieve Report{% endblock %}
+{% block content %}
+<h1 class="display-4">Report information</h1>
+<div>
+ {% if count == 0 %}
+ <p>There are no report.</p>
+ {% elif count == 1 %}
+ <p>There is 1 report.</p>
+ {% else %}
+ <p>There are {{ count }} report.</p>
+ {% endif %}
+</div>
+<div>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Report Count</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Delivery ID</th>
+            <th>Method</th>
+            <th>Remarks</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for report in reportsList %}
+        <tr>
+            <td>{{ report.get_reportID() }}</td>
+            <td>{{ report.get_firstName() }}</td>
+            <td>{{ report.get_lastName() }}</td>
+            <td>{{ report.get_deliveryID() }}</td>
+            {% if report.get_method() == "T" %}
+            <td>Truck</td>
+            {% elif report.get_method() == "P" %}
+            <td>Postage</td>
+            {% endif %}
+            <td>{{ report.get_remarks() }}</td>
+            <td><a href="/updateReport/{{report.get_reportID()}}" class="btn btn-warning">Update</a></td>
+            <td>
+                <form action="{{url_for('deleteReport', id=report.get_reportID())}}" method="POST">
+                    <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this report?');">
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+ </table>
+</div>
+{% endblock %}
